@@ -135,10 +135,9 @@ EventBus.removeEventListener('EXAMPLE_EVENT', function() {
 });
 
 /* Correct - callback function is the same instance */
-EventBus.addEventListener('EXAMPLE_EVENT', function() {
+var callback = function() {
     console.log('example callback');
-});
-EventBus.removeEventListener('EXAMPLE_EVENT', function() {
-    console.log('example callback');
-});
+};
+EventBus.addEventListener('EXAMPLE_EVENT', callback);
+EventBus.removeEventListener('EXAMPLE_EVENT', callback);
 ```
